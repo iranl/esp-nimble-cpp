@@ -110,13 +110,7 @@ int NimBLERemoteValueAttribute::onWriteCB(uint16_t conn_handle, const ble_gatt_e
 
     if (pAtt != nullptr) {
         if (pAtt->getClient() != nullptr) {
-            if (pAtt->getClient()->getConnHandle() != nullptr) {
-                if (pAtt->getClient()->getConnHandle() != conn_handle) {
-                    return 0;
-                }
-            }
-            else
-            {
+            if (pAtt->getClient()->getConnHandle() != conn_handle) {
                 return 0;
             }
         }
